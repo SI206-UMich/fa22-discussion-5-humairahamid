@@ -69,7 +69,13 @@ class TestAllMethods(unittest.TestCase):
 
 	## Check to see whether you can add an item to the warehouse
 	def test_add_item(self):
+		wh1 = Warehouse()
+		self.assertEqual(wh1.items,[], "When list is empty")
+		wh1.add_item(self.item2)
+		wh1.add_item(self.item4)
+		self.assertEqual(wh1.items,[self.item2, self.item4], "When list has two items")
 		
+
 
 
 	## Check to see whether warehouse correctly returns the item with the most stock
